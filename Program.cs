@@ -33,7 +33,8 @@
             new ProductReviewModel() { ProductId = 105, UserId = 25, Rating = 5, Review = "Excellent", isLike = true },
             };
             ManageReview obj = new ManageReview();
-            obj.Display(reviewList);
+            //obj.Display(reviewList);
+            obj.PrintTopThreeRecords(reviewList);
         }
     }
 }

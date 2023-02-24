@@ -17,5 +17,12 @@ namespace LINQ_ProductReviewManagement
                 Console.WriteLine($"ProductID: {feedback.ProductId},UserId: {feedback.UserId}Rating: {feedback.Rating},Review: {feedback.Review}");
             }
         }
+        public void PrintTopThreeRecords(List<ProductReviewModel> reviewList)
+        {
+            //top 3 recors whose ratings are high
+            Console.WriteLine("Print top three records");
+            var result = reviewList.OrderByDescending(x => x.Rating).Take(3).ToList();
+            Display(result);
+        }
     }
 }
