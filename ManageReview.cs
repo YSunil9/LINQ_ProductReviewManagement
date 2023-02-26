@@ -10,7 +10,7 @@ namespace LINQ_ProductReviewManagement
     {
         public void Display(List<ProductReviewModel> reviewList)
         {
-            Console.WriteLine("Display The FeedBack of The Product\n");
+            //Console.WriteLine("Display The FeedBack of The Product\n");
             //Print products
             foreach (var feedback in reviewList)
             {
@@ -23,6 +23,13 @@ namespace LINQ_ProductReviewManagement
             Console.WriteLine("Print top three records");
             var result = reviewList.OrderByDescending(x => x.Rating).Take(3).ToList();
             Display(result);
+        }
+        public void GetRecordsRatingsGreaterThanThree(List<ProductReviewModel> reviewList)
+        {
+            //fetch record whose rating greater than three and product id 1,4,9
+            Console.WriteLine("Display record whose rating > 3 and product id are 1,4,9");
+            var result = reviewList.Where(x => x.Rating > 3 && (x.ProductId == 1 || x.ProductId == 4 || x.ProductId == 9)).ToList();
+           Display(result);
         }
     }
 }
