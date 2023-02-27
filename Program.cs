@@ -35,7 +35,8 @@
             ManageReview obj = new ManageReview();
             //obj.Display(reviewList);
             //obj.PrintTopThreeRecords(reviewList);
-            obj.GetRecordsRatingsGreaterThanThree(reviewList);
+           // obj.GetRecordsRatingsGreaterThanThree(reviewList);
+            obj.GetCountOfProductId(reviewList);
         }
     }
 }

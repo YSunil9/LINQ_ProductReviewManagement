@@ -29,7 +29,16 @@ namespace LINQ_ProductReviewManagement
             //fetch record whose rating greater than three and product id 1,4,9
             Console.WriteLine("Display record whose rating > 3 and product id are 1,4,9");
             var result = reviewList.Where(x => x.Rating > 3 && (x.ProductId == 1 || x.ProductId == 4 || x.ProductId == 9)).ToList();
-           Display(result);
+            Display(result);
+        }
+        public void GetCountOfProductId(List<ProductReviewModel> reviewList)
+        {
+            //Retrieve count of review present for each productID
+            var result = reviewList.GroupBy(x => x.ProductId).ToList();
+            foreach (var productReview in result)
+            {
+                Console.WriteLine($"ProductId = {productReview.Key}, count of product = {productReview.Count()}");
+            }
         }
     }
 }
